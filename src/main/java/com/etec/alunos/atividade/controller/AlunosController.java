@@ -23,13 +23,13 @@ public class AlunosController {
 	@Autowired
 	AlunosService service;
 
-	@PostMapping("cadastrar")
+	@PostMapping("/cadastrar")
 	public ResponseEntity<?> cadastrarAluno(@RequestBody AlunosDTO dto) {
 	   Alunos alunos = service.cadastrarAlunos(dto);
 		return ResponseEntity.status(HttpStatus.OK).body(alunos);
 	}
 
-	@GetMapping("listar")
+	@GetMapping("/listar")
 	public ResponseEntity<?> listarAlunos(AlunosDTO dto){
 		List<Alunos> alunos = service.buscar();
 		return ResponseEntity.status(HttpStatus.OK).body(alunos);
